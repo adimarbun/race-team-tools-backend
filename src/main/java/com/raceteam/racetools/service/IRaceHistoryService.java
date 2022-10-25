@@ -9,6 +9,5 @@ public interface IRaceHistoryService {
     RaceHistory CreateRaceHistory(RaceHistory raceHistory);
     void GenerateDataHistoryRace();
     void UpdateRaceDashBoard();
-    void StartRace();
     List<RaceHistoryModel> GetHistoryLastFiveMinutes(int offset,int pageSize);
 }

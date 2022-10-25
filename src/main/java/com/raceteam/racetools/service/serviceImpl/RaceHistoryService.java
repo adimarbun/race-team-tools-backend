@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import com.raceteam.racetools.dto.RaceHistoryModel;
 import com.raceteam.racetools.entity.RaceHistory;
 import com.raceteam.racetools.entity.RaceStatus;
+import com.raceteam.racetools.exception.GeneralException;
 import com.raceteam.racetools.repository.RaceHistoryRepository;
 import com.raceteam.racetools.repository.RaceStatusRepository;
 import com.raceteam.racetools.service.IFireStoreService;
@@ -111,16 +112,22 @@ public class RaceHistoryService implements IRaceHistoryService {
         }
     }
 
-    @Override
-    public void StartRace() {
-
-    }
-
     /*
     To get List history last five minutes from createdAt last insert data
      */
     @Override
     public List<RaceHistoryModel> GetHistoryLastFiveMinutes(int offset, int pageSize) {
+
+        boolean raceRun = false;
+        Optional<RaceStatus> raceStatusData = this.raceStatusRepository.findById(1);
+        if(raceStatusData.isPresent()){
+            RaceStatus raceStatus = raceStatusData.get();
+            raceRun = raceStatus.getRaceRun();
+        }
+        if(!raceRun){
+            throw new GeneralException(401,"Data not be access!");
+        };
+
         Page<RaceHistory> dataLast = this.raceHistoryRepository.
                 findAll(PageRequest.of(0, 1, Sort.by("id").descending()));;
         LocalDateTime toDate = dataLast.getContent().get(0).getCreatedAt();

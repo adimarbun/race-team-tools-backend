@@ -18,7 +18,7 @@ public class Scheduler {
     /*
         The scheduler below to simulate car race send data every 1 ms and save to database
     */
-    @Scheduled(fixedDelay = 1000,initialDelay = 1000)
+    @Scheduled(fixedDelay = 1,initialDelay = 1)
     public void schedule(){
         _raceHistoryService.GenerateDataHistoryRace();
     }
@@ -27,7 +27,7 @@ public class Scheduler {
         The scheduler below to update dashboard every 10 ms , get last data from race history
         and update to firestore to show for dashboard
     */
-    @Scheduled(fixedDelay = 1000,initialDelay = 1000)
+    @Scheduled(fixedDelay = 10,initialDelay = 10)
     public void scheduleUpdateDashboard() {
 
         _raceHistoryService.UpdateRaceDashBoard();
