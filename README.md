@@ -1,6 +1,12 @@
 # race-team-tools-backend
 Back End to support race ream tool app
 
+an overview of how the app works
+
+![image](https://user-images.githubusercontent.com/57535407/197811597-b7166165-4f7b-4561-867b-0c7e766f2bf4.png)
+
+
+
 
 
 # How To Run App
@@ -18,7 +24,7 @@ Spesification :
 
 - Run Project
 - open swagger api http://localhost:8080/swagger-ui/index.html# 
--  to simulate race run , hit api start
+-  to simulate race , hit api start
 ![image](https://user-images.githubusercontent.com/57535407/197691128-f7cf9eb0-ec48-4564-be92-669705a7d365.png)
 
 -to stop simulate race, hit api stop
