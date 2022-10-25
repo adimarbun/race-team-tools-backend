@@ -9,9 +9,8 @@ import java.time.LocalDateTime;
 @Entity
 public class RaceStatus {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private Boolean isRaceRun;
+    private Boolean isRaceRun = true;
     private LocalDateTime startRaceAt = LocalDateTime.now();
 
     public int getId() {
