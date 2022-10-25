@@ -12,6 +12,7 @@ Spesification :
  
  
  - Clone the project https://github.com/adimarbun/race-team-tools-backend .
+ - Open on intellij .
  - Change file aplication properties, adjust your database configuration .
  ![image](https://user-images.githubusercontent.com/57535407/197690868-51dbf381-e643-48cd-b386-488b4c326ecf.png)
 
